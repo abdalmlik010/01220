@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junior's Matcha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======= HEADER ======= -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-circle">
+        <img src="logo.jpg" alt="Junior's Matcha Logo">
+      </div>
+      <div class="logo-text">
+        <div class="junior">junior's</div>
+        <div class="matcha">Matcha</div>
+      </div>
+    </a>
+    <nav>
+      <a href="#menu">القائمة</a>
+      <a href="#about">عن المتجر</a>
+      <a href="#reviews">آراء العملاء</a>
+      <a href="#order">اطلب الآن</a>
+    <div class="header-controls">
+        <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙</button>
+        <button class="cart-btn" onclick="openCart()">
+     🛒 السلة
+     <span class="cart-badge" id="cart-count">0</span>
+        </button>
+    </div>
+  </div>
+</header>
+
+<!-- ======= HERO ======= -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">🌿 100% ماتشا أصلي يابان</div>
+      <h1>
+        اكتشف نكهة<br>
+        <span class="pink">الماتشا</span> الأصيل<br>
+        <span class="green">مع Junior's</span>
+      </h1>
+      <p>مشروبات الماتشا الطازجة المحضّرة بعناية وحب، من أجود أنواع مسحوق الماتشا الياباني المستوردة مباشرة لك.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn-primary">🍵 تصفح القائمة</a>
+        <a href="#order" class="btn-secondary">📦 اطلب الآن</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-logo-wrapper">
+        <img src="logo.jpg" alt="Junior's Matcha" class="hero-logo-img">
+        <div class="float-elem" style="top:5%;left:5%">✨</div>
+        <div class="float-elem" style="top:10%;right:5%">💚</div>
+        <div class="float-elem" style="bottom:10%;left:5%">🍃</div>
+        <div class="float-elem" style="bottom:5%;right:8%">🌸</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FEATURES ======= -->
+<section class="features">
+  <div class="features-inner">
+    <div class="feature-card">
+      <div class="feature-icon">🍃</div>
+      <h3>ماتشا طازج يومياً</h3>
+      <p>نستخدم مسحوق الماتشا من أعلى جودة يابانية، يُحضَّر طازجاً لضمان أفضل نكهة وفوائد صحية.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🚀</div>
+      <h3>توصيل سريع</h3>
+      <p>توصيل سريع وفوري لتصلك طلباتك وهي في أفضل حالة، لأن الماتشا الطازج يستحق كل دقيقة.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💖</div>
+      <h3>مُحضَّر بحب</h3>
+      <p>كل مشروب نصنعه بأيدي متخصصة وقلب مفعم بالحب، لتحظى بتجربة شرب لا تُنسى.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= POSTER ======= -->
+<section class="poster-section">
+  <div class="section-title">
+    <div class="tag">🌸 هويتنا</div>
+    <h2>Junior's <span>Matcha</span></h2>
+    <div class="divider"></div>
+    <p>نكهة أصيلة، لحظة لا تُنسى</p>
+  </div>
+  <div class="poster-wrapper">
+    <img src="poster.jpg" alt="Junior's Matcha Poster">
+    <div class="poster-overlay"></div>
+    <div class="poster-label">🍵 اطلب الآن وذوّق الفرق</div>
+  </div>
+</section>
+
+<!-- ======= MENU ======= -->
+<section class="menu" id="menu">
+  <div class="menu-inner">
+    <div class="section-title">
+      <div class="tag">🍵 قائمتنا</div>
+      <h2>اكتشف <span>منتجاتنا</span></h2>
+      <div class="divider"></div>
+      <p>تشكيلة متنوعة من مشروبات الماتشا الفاخرة</p>
+    </div>
+    <div class="menu-tabs">
+      <button class="tab active" onclick="filterMenu('all', this)">الكل</button>
+      <button class="tab" onclick="filterMenu('hot', this)">☕ ساخن</button>
+      <button class="tab" onclick="filterMenu('cold', this)">🧊 بارد</button>
+      <button class="tab" onclick="filterMenu('special', this)">⭐ المميز</button>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<!-- ======= ABOUT BANNER ======= -->
+<section class="banner" id="about">
+  <div class="banner-inner">
+    <div class="banner-text">
+      <div class="tag">🌿 قصتنا</div>
+      <h2>من قلب اليابان<br>إلى كوبك</h2>
+      <p>بدأنا رحلتنا من شغفنا العميق بثقافة الماتشا الياباني الأصيل. نؤمن أن كل كوب هو تجربة فريدة تستحق الاهتمام والعناية.</p>
+      <div class="banner-stats">
+        <div class="stat">
+          <div class="stat-num">+500</div>
+          <div class="stat-label">عميل راضٍ</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">نكهة مميزة</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">طبيعي وأصلي</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-visual">
+      <div class="ingredient-pill"><span class="icon">🍵</span> مسحوق الماتشا الياباني</div>
+      <div class="ingredient-pill"><span class="icon">🥛</span> حليب طازج كريمي</div>
+      <div class="ingredient-pill"><span class="icon">🍯</span> عسل طبيعي</div>
+      <div class="ingredient-pill"><span class="icon">🌸</span> بخار الزهور</div>
+      <div class="ingredient-pill"><span class="icon">🧊</span> ثلج فاخر</div>
+      <div class="ingredient-pill"><span class="icon">✨</span> حضور يدوي خبير</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= REVIEWS ======= -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="section-title">
+      <div class="tag">💬 الآراء</div>
+      <h2>ماذا يقول <span>عملاؤنا؟</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="reviewer">
+          <div class="reviewer-avatar">👩</div>
+          <div>
+            <div class="reviewer-name">سارة الأحمد</div>
+            <div class="reviewer-sub">عميلة مميزة</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">ماتشا لاتيه بارد خيالي! الطعم أصيل وطبيعي جداً، أحسن من أي مكان ذقته. أصبح الطلب اليومي لي 💚</p>
+      </div>
+      <div class="review-card">
+        <div class="reviewer">
+          <div class="reviewer-avatar">👨</div>
+          <div>
+            <div class="reviewer-name">محمد الزهراني</div>
+            <div class="reviewer-sub">عميل دائم</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">التوصيل كان سريع جداً والمشروب وصل طازج ورائع. فعلاً فرق كبير في الجودة والنكهة. أنصح الكل!</p>
+      </div>
+      <div class="review-card">
+        <div class="reviewer">
+          <div class="reviewer-avatar">👩‍🦱</div>
+          <div>
+            <div class="reviewer-name">نورة العتيبي</div>
+            <div class="reviewer-sub">محبة الماتشا</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">ماتشا فرابيه من الله عليه! كريمي وغني بالنكهة ومش حلو زيادة. أكيد سأعيد الطلب وأجيب معي صديقاتي!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ORDER FORM ======= -->
+<section class="order" id="order">
+  <div class="section-title" style="margin-bottom: 2.5rem;">
+    <div class="tag">📦 اطلب الآن</div>
+    <h2>أرسل <span>طلبك</span></h2>
+    <div class="divider"></div>
+    <p>سنتواصل معك قريباً لتأكيد الطلب</p>
+  </div>
+  <div class="order-inner">
+    <div class="form-row">
+      <div class="form-group">
+        <label>الاسم الكامل</label>
+        <input type="text" placeholder="أدخل اسمك">
+      </div>
+      <div class="form-group">
+        <label>رقم الجوال</label>
+        <input type="tel" placeholder="05xxxxxxxx">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>اختر المنتج</label>
+      <select>
+        <option value="">— اختر المشروب —</option>
+        <option>ماتشا لاتيه بارد</option>
+        <option>ماتشا لاتيه ساخن</option>
+        <option>ماتشا فرابيه</option>
+        <option>ماتشا أيس كريم لاتيه</option>
+        <option>ماتشا الكلاسيكي</option>
+        <option>ماتشا براون شوجر</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>العنوان</label>
+      <input type="text" placeholder="حي / مدينة">
+    </div>
+    <div class="form-group">
+      <label>ملاحظات إضافية (اختياري)</label>
+      <textarea placeholder="مثال: بدون سكر، حليب نباتي..."></textarea>
+    </div>
+    <button class="submit-btn" onclick="submitOrder()">
+      🍵 أرسل الطلب
+    </button>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-text">
+        <div class="junior">junior's</div>
+        <div class="matcha">Matcha ☕</div>
+      </div>
+      <p>متجرك المفضل لأجود أنواع مشروبات الماتشا الياباني الأصيل. نحضّر لك كل كوب بعناية ومحبة.</p>
+      <div class="footer-socials">
+        <a class="social-btn" href="#">📸</a>
+        <a class="social-btn" href="#">💬</a>
+        <a class="social-btn" href="#">🐦</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>روابط سريعة</h4>
+      <a href="#menu">القائمة</a>
+      <a href="#about">عن المتجر</a>
+      <a href="#reviews">الآراء</a>
+      <a href="#order">اطلب الآن</a>
+    </div>
+    <div class="footer-links">
+      <h4>تواصل معنا</h4>
+      <a href="#">📞 0500000000</a>
+      <a href="#">📧 hello@juniors-matcha.com</a>
+      <a href="#">📍 الرياض، السعودية</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Junior's Matcha · صُنع بـ 💚 وماتشا أصيل
+  </div>
+</footer>
+
+<!-- ======= CART SIDEBAR ======= -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 سلة المشتريات</h3>
+    <button class="close-cart" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="empty-cart" id="empty-cart">
+      <div class="icon">🛒</div>
+      <p>سلتك فارغة<br>أضف منتجاً من القائمة</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>المجموع</span>
+      <span class="amount" id="cart-total">0 ر.س</span>
+    </div>
+    <button class="submit-btn" onclick="checkout()">
+      🍵 إتمام الطلب
+    </button>
+  </div>
+</div>
+
+<!-- ======= TOAST ======= -->
+<div class="toast" id="toast">
+  <span id="toast-icon">✅</span>
+  <span id="toast-msg">تمت الإضافة للسلة</span>
+</div>
+
+<!-- ======= JS ======= -->
+<script src="script.js"></script>
+
+</body>
+</html>
